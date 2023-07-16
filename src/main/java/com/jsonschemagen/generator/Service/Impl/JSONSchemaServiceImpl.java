@@ -6,14 +6,12 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.jsonschemagen.generator.DTO.RequestBodyDTO;
 import com.jsonschemagen.generator.DTO.ResponseReturnDTO;
-import com.jsonschemagen.generator.Service.ISchemaGeneratorService;
+import com.jsonschemagen.generator.Service.IJSONSchemaService;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 import java.util.Objects;
 
 @Service
-public class SchemaGeneratorServiceImpl implements ISchemaGeneratorService {
+public class JSONSchemaServiceImpl implements IJSONSchemaService {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
@@ -25,6 +23,7 @@ public class SchemaGeneratorServiceImpl implements ISchemaGeneratorService {
         responseReturnDTO.setSchema(schema);
         return responseReturnDTO;
     }
+
 
     public JsonNode generateJsonSchema(JsonNode data) {
         if (data.isObject()) {
@@ -41,7 +40,6 @@ public class SchemaGeneratorServiceImpl implements ISchemaGeneratorService {
 
                     properties.set(entry.getKey(),generateJsonSchema(entry.getValue()));
                 }
-
 
             });
 
