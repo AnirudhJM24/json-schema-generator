@@ -1,0 +1,6 @@
+com\jsonschemagen\generator\DTO\ResponseReturnDTO.class
+com\jsonschemagen\generator\Service\Impl\JSONSchemaServiceImpl.class
+com\jsonschemagen\generator\DTO\RequestBodyDTO.class
+com\jsonschemagen\generator\GeneratorApplication.class
+com\jsonschemagen\generator\Controller\JSONUtilController.class
+com\jsonschemagen\generator\Service\IJSONSchemaService.class
